@@ -6,3 +6,8 @@
 * {
     font-family: "Jost", sans-serif;
 }
+
+@theme {
+    --breakpoint-nav-xl: 912px;
+    --breakpoint-nav-md: 577px;
+}
