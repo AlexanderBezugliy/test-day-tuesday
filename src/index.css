@@ -17,4 +17,8 @@
 
     --breakpoint-descr-xl: 860px;
     --breakpoint-descr-md: 500px;
+
+    --breakpoint-slider-xl: 1050px;
+    --breakpoint-slider-md: 860px;
+
 }
