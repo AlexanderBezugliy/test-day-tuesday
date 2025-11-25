@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import HeroDescr from './components/HeroDescr'
 
 
 
@@ -9,7 +10,9 @@ const App = () => {
         <div >
             <Navbar />
             <Hero />
+            <HeroDescr />
 
+            
         </div>
     )
 }

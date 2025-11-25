@@ -14,4 +14,7 @@
     --breakpoint-hero-xl: 1444px;
     --breakpoint-hero-md: 480px;
     --breakpoint-hero-sm: 385px;
+
+    --breakpoint-descr-xl: 860px;
+    --breakpoint-descr-md: 500px;
 }
