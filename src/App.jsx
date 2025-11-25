@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import HeroDescr from './components/HeroDescr'
 import Detaily from './components/Detaily'
 import Specification from './components/Specification'
+import Motor from './components/Motor'
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
             <HeroDescr />
             <Detaily />
             <Specification />
+            <Motor />
 
         </div>
     )

@@ -26,7 +26,9 @@ const Specification = () => {
     return (
         <div className='w-full pt-5 bg-[#F1F1F1]'>
             <div className='mx-auto max-w-[1440px] px-5 flex flex-col specific-xl:flex-row justify-between pb-[170px]'>
-                <h3 className='mb-4 text-[20px] font-medium text-center specific-xl:text-start specific-xl:mb-0'>ŠPECIFIKÁCIA</h3>
+                <div className='flex-[38%]'>
+                    <h3 className='mb-4 text-[20px] font-medium text-center specific-xl:text-start specific-xl:mb-0'>ŠPECIFIKÁCIA</h3>
+                </div>
 
                 <div className="relative grid grid-cols-1 specific-md:grid-cols-2 gap-x-5 gap-y-0">
                     
