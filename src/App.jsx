@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import HeroDescr from './components/HeroDescr'
 import Detaily from './components/Detaily'
+import Specification from './components/Specification'
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
             <Hero />
             <HeroDescr />
             <Detaily />
+            <Specification />
 
         </div>
     )

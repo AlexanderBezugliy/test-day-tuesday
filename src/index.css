@@ -21,4 +21,7 @@
     --breakpoint-slider-xl: 1050px;
     --breakpoint-slider-md: 860px;
 
+    --breakpoint-specific-xl: 1185px;
+    --breakpoint-specific-md: 625px;
+
 }
