@@ -10,4 +10,8 @@
 @theme {
     --breakpoint-nav-xl: 912px;
     --breakpoint-nav-md: 577px;
+
+    --breakpoint-hero-xl: 1444px;
+    --breakpoint-hero-md: 480px;
+    --breakpoint-hero-sm: 385px;
 }
