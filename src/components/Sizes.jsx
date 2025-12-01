@@ -3,7 +3,7 @@ import React from "react";
 const Sizes = () => {
 
     return (
-        <div className="mx-auto max-w-[1440px] px-5 mt-5 mb-[50px] flex flex-col sizes-md:flex-row gap-x-20 text-[#0C0D0D]">
+        <div className="mx-auto max-w-[1440px] px-5 mt-5 mb-30 flex flex-col sizes-md:flex-row gap-x-20 text-[#0C0D0D]">
             {/* left */}
             <div className="flex-[30%] mb-5 sizes-md:mb-0 text-center sizes-md:text-start">
                 <h3 className="text-[20px] font-medium">VEĽKOSŤ BICYKLA</h3>

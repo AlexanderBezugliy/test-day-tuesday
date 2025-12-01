@@ -30,5 +30,6 @@
     --breakpoint-sizes-md: 702px;
     --breakpoint-sizes-sm: 445px;
 
-
+    --breakpoint-geom-md: 970px;
+    --breakpoint-geom-sm: 500px;
 }

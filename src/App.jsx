@@ -6,12 +6,13 @@ import Detaily from './components/Detaily'
 import Specification from './components/Specification'
 import Motor from './components/Motor'
 import Sizes from './components/Sizes'
+import Geometria from './components/Geometria'
 
 
 
 const App = () => {
     return (
-        <div >
+        <>
             <Navbar />
             <Hero />
             <HeroDescr />
@@ -19,8 +20,9 @@ const App = () => {
             <Specification />
             <Motor />
             <Sizes />
+            <Geometria />
 
-        </div>
+        </>
     )
 }
 
