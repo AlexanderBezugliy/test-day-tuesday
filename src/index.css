@@ -27,5 +27,8 @@
     --breakpoint-motor-xl: 1303px;
     --breakpoint-motor-md: 702px;
 
+    --breakpoint-sizes-md: 702px;
+    --breakpoint-sizes-sm: 445px;
+
 
 }
