@@ -29,7 +29,7 @@ const ManualDropdown = ({ title, items, isDark = false, arrow }) => {
                     {items.map((item, index) => (
                         <li
                             key={index}
-                            className="h-[50px] flex items-center px-4 hover:bg-gray-200 cursor-pointer text-[#0C0D0D]"
+                            className="h-[50px] flex items-center px-4 hover:bg-gray-200 cursor-pointer text-[#0C0D0D] uppercase"
                             onClick={() => handleSelect(item)}
                         >
                             {item}
