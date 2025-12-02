@@ -34,4 +34,7 @@
 
     --breakpoint-geom-md: 970px;
     --breakpoint-geom-sm: 500px;
+
+    --breakpoint-bike-md: 640px;
+    --breakpoint-bike-sm: 425px;
 }
