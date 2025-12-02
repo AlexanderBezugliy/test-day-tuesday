@@ -7,6 +7,7 @@ import Specification from './components/Specification'
 import Motor from './components/Motor'
 import Sizes from './components/Sizes'
 import Geometria from './components/Geometria'
+import Technologies from './components/Technologies'
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
             <Motor />
             <Sizes />
             <Geometria />
+            <Technologies />
 
         </>
     )
