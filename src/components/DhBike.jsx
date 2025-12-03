@@ -3,7 +3,7 @@ import React from 'react'
 const DhBike = () => {
     return (
         <div className='flex flex-col items-center my-[100px]'>
-            <img src="/dh-bike/hero-bike.png" alt="hero-bike" className='max-w-[380px] max-h-[380px] bike-md:max-w-[600px] bike-md:max-h-[600px] px-5 bike-md:px-0 object-cover' />
+            <img src="/dh-bike/hero-bike.png" alt="hero-bike" className='max-w-[325px] max-h-[325px] bike-sm:max-w-[380px] bike-sm:max-h-[380px] bike-md:max-w-[600px] bike-md:max-h-[600px] px-5 bike-md:px-0 object-cover' />
 
             <div className='flex flex-col max-w-[600px] px-7 bike-sm:px-[74px]'>
                 <h3 className='text-center bike-md:text-start text-[#7D8082] text-[14px] mb-2.5 mt-3.5 uppercase'>Recenzia</h3>
