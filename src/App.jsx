@@ -12,6 +12,7 @@ import DhBike from './components/DhBike'
 import Navody from './components/Navody'
 import Bicycle from './components/Bicycle'
 import Doplinky from './components/Doplinky'
+import Footer from './components/Footer'
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
             <Navody />
             <Bicycle />
             <Doplinky />
+            <Footer />
 
         </>
     )
