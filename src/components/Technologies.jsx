@@ -25,12 +25,10 @@ const Technologies = () => {
         const slider = sliderRef.current;
 
         if (!slider) return;
-        // Погрешность в 1 пиксель (иногда браузеры считают неточно)
-        const tolerance = 2;
-        // Мы в начале, если отступ слева (scrollLeft) почти 0
-        setIsStart(slider.scrollLeft <= tolerance);
-        // Мы в конце, если (прокрутка + ширина экрана) >= (общая ширина контента)
-        setIsEnd(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - tolerance);
+
+        const tolerance = 2; // погрешность
+        setIsStart(slider.scrollLeft <= tolerance); // Мы в начале, если отступ слева (scrollLeft) почти 0
+        setIsEnd(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - tolerance); // Мы в конце, если (прокрутка + ширина экрана) >= (общая ширина контента)
     };
 
     const scroll = (offset) => {
@@ -47,7 +45,7 @@ const Technologies = () => {
                     {/* arrows */}
                     <div className='flex items-center'>
                         <button 
-                            onClick={() => scroll(-300)} 
+                            onClick={() => scroll(-350)} 
                             disabled={isStart}
                             className={`p-2 transition-all duration-200 
                                 ${isStart ? 'opacity-30 cursor-default' : 'hover:scale-110 opacity-100 cursor-pointer'}`}
@@ -57,7 +55,7 @@ const Technologies = () => {
                             </svg>
                         </button>
                         <button 
-                            onClick={() => scroll(300)} 
+                            onClick={() => scroll(350)} 
                             disabled={isEnd}
                             className={`p-2 transition-all duration-200 
                                 ${isEnd ? 'opacity-30 cursor-default' : 'hover:scale-110 opacity-100 cursor-pointer'}`}

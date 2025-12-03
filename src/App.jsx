@@ -10,6 +10,7 @@ import Geometria from './components/Geometria'
 import Technologies from './components/Technologies'
 import DhBike from './components/DhBike'
 import Navody from './components/Navody'
+import Bicycle from './components/Bicycle'
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
             <Technologies />
             <DhBike/>
             <Navody />
+            <Bicycle />
 
         </>
     )
