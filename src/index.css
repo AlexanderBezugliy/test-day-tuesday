@@ -37,4 +37,8 @@
 
     --breakpoint-bike-md: 640px;
     --breakpoint-bike-sm: 425px;
+
+    --breakpoint-slideBike-lg: 1333px;
+    --breakpoint-slideBike-md: 855px;
+    --breakpoint-slideBike-sm: 415px;
 }

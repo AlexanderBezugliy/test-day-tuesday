@@ -15,7 +15,7 @@ const BikeCard = ({ bike }) => {
     return (
         <div 
             key={bike.id} 
-            className="w-[33.333%] bg-gray-200 p-4 shrink-0 snap-start"
+            className="w-full slideBike-md:w-[50%] slideBike-lg:w-[33.333%] bg-gray-200 p-4 shrink-0 snap-start"
         >
             <div className="flex justify-between items-start">
                 <div className="flex">
@@ -29,7 +29,7 @@ const BikeCard = ({ bike }) => {
             {/* img */}
             <img src={bike.img} alt={bike.title} className="mx-auto w-full mix-blend-multiply pt-[140px] pb-[30px] object-cover"  />
 
-            <div className="flex justify-between items-end">
+            <div className="flex flex-col slideBike-sm:flex-row justify-between items-center slideBike-sm:items-end gap-4 slideBike-sm:gap-0">
                 <div>
                     <h3 className="font-medium">{bike.title}</h3>
                     <p className="text-gray-500">{bike.price}</p>
