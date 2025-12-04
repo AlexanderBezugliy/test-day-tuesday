@@ -1,25 +1,45 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import BikeColors from './ui/BikeColors';
+import { heroLinks } from '../assets';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 
 
 const Hero = () => {
     const [isActive, setIsActive] = useState('SWITCH PRO');
 
-    const heroLinks = [
-        { name: "Úvod", href: "#" },
-        { name: "E-bicykle", href: "#" },
-        { name: "E-Mtb", href: "#" },
-        { name: "E-Enduro", href: "#" },
-        { name: "SWITCH PRO", href: "#" },
-    ];
+    const navRef = useRef();
+    const leftSideRef = useRef();
+    const rightSideRef = useRef();
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power2.out', duration: 1 } });
+
+        tl.from(leftSideRef.current, { 
+            x: -100, 
+            opacity: 0, 
+            delay: 1 
+        })
+        .from(rightSideRef.current, { 
+            x: 150, 
+            opacity: 0, 
+            ease: "bounce",
+        }, '-=0.5')
+        .from(navRef.current.children, {
+            y: -20,
+            opacity: 0,
+            stagger: 0.15,  // эффект лесенки (по очереди)
+        }, '-=1')
+    }, []);
+
 
     return (
-        <div className='bg-[#F1F1F1]'>
+        <div className='bg-[#F1F1F1] overflow-hidden'>
             <div className='mx-auto max-w-[850px] hero-xl:max-w-[1440px] px-5  '>
                 {/* navigate */}
                 <div className='py-4'>
-                    <ul className='flex gap-1.5 text-[11px] hero-sm:text-[14px] font-medium text-[#979A9B]'>
+                    <ul ref={navRef} className='flex gap-1.5 text-[11px] hero-sm:text-[14px] font-medium text-[#979A9B]'>
                         {/* links */}
                         {heroLinks.map((item, index) => (
                             <li key={item.name} className="flex items-center">
@@ -45,7 +65,7 @@ const Hero = () => {
 
                 <div className='flex flex-col hero-xl:flex-row justify-between pb-5'>
                     {/* left side */}
-                    <div className='flex flex-col justify-between'>
+                    <div ref={leftSideRef} className='flex flex-col justify-between'>
                         <div>
                             <div className='flex gap-4 mt-4 mb-6'>
                                 <img src="/hero-section/switch.png" alt="switch" className='w-[220px] hero-md:max-w-[540px] hero-md:max-h-[130px] object-cover' />
@@ -62,7 +82,7 @@ const Hero = () => {
                     </div>
 
                     {/* right-side */}
-                    <div className=''>
+                    <div ref={rightSideRef}>
                         {/* + */}
                         <div className='flex justify-end'>
                             <div className='flex mr-7 mt-5 hero-md:mt-0 cursor-pointer'>

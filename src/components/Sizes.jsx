@@ -1,16 +1,42 @@
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import React, { useRef } from "react";
+import Title from "./ui/Title";
 
 const Sizes = () => {
+    const container = useRef();
+    const titleRef = useRef();
+    const mainSectionRef = useRef();
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            defaults: { ease: "power3.out", duration: 1 },
+            scrollTrigger: {
+                trigger: container.current,
+                start: 'top 90%',
+                toggleActions: 'play none none reverse',
+            }
+        });
+
+        tl.from(titleRef.current, {
+            x: -100, 
+            opacity: 0,
+        })
+        .from(mainSectionRef.current, {
+            y: 100,
+            opacity: 0,
+        }, "-=0.6") 
+    }, {scope: 'container'})
 
     return (
-        <div className="mx-auto max-w-[1440px] px-5 mt-5 mb-30 flex flex-col sizes-md:flex-row gap-x-20 text-[#0C0D0D]">
+        <div ref={container} className="mx-auto max-w-[1440px] px-5 mt-5 mb-30 flex flex-col sizes-md:flex-row gap-x-20 text-[#0C0D0D]">
             {/* left */}
-            <div className="flex-[30%] mb-5 sizes-md:mb-0 text-center sizes-md:text-start">
-                <h3 className="text-[20px] font-medium">VEĽKOSŤ BICYKLA</h3>
+            <div ref={titleRef} className="flex-[30%] mb-5 sizes-md:mb-0 text-center sizes-md:text-start">
+                <Title title="VEĽKOSŤ BICYKLA" />
             </div>
 
             {/* right */}
-            <div className="flex-[70%] flex flex-col text-[12px] sizes-sm:text-[16px]">
+            <div ref={mainSectionRef} className="flex-[70%] flex flex-col text-[12px] sizes-sm:text-[16px]">
                 {/* grid */}
                 <div className="w-full grid grid-cols-[65px_50px_repeat(3,1fr)] border-t border-gray-200">
                     <div className="py-[7px] row-span-2 border-b  border-gray-200 flex items-center">210 cm</div>

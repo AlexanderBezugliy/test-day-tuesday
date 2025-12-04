@@ -1,25 +1,39 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import React, { useRef, useState } from 'react';
+import Title from './ui/Title';
+import { technologyImages } from '../assets';
 
-const technologyImages = [
-    { id: 1, src: "/technology/img1.png", alt: "tech_1", title: 'TAPERED HEAD TUBING', descr: 'Tapered hlavová trubka má kónický tvar, ktorý je charakteristický najmä tuhosťou a pevnosťou. V hornej časti je ložisko s rozmerom 1 1/8 palca a v spodnej časti 1,5 palca. Aj takýto malý detail robí bicykel pri jazde stabilnejším a presnejším.' },
-    { id: 2, src: "/technology/img2.png", alt: "tech_2", title: 'DROPPER SEATPOST', descr: 'Teleskopická sedlovka s možnosťou zasunutia do rámu. Ideálna v prípade členitého terénu. Pomocou diaľkového ovládania z riadidiel jazdec mení výšku sedla za jazdy bez nutnosti zosadať pred technickými pasážami.' },
-    { id: 3, src: "/technology/img3.png", alt: "tech_3", title: 'Syntace X12', descr: 'Syntace X12 je jednoduchý systém, ktorý šetrí hmotnosť a uľahčuje montáž, demontáž kolesa a dotiahnutie len z jednej strany. Medzi hlavné výhody systému X12 patrí vyššia tuhosť zadného kolesa a spoľahlivá poloha brzdového kotúča.' },
-    { id: 4, src: "/technology/img4.png", alt: "tech_4", title: 'FSS Floating', descr: 'FSS (Floating Shock Suspension) je systém pruženia, ktorý stláča plne plávajúci tlmičsimultánne z oboch strán. Tento systém tak zabraňuje zvýšenému naťahovaniu reťaze azároveň je aktívny pri brzdení, pričom účinnosť brzdenia zostáva zachovaná v plnom rozsahu.Systém FSS poskytuje plnú stabilitu a pohodlie v akýchkoľvek podmienkach a ani v prudkýchstúpaniach tak nestrácate vyvinutú silu a energiu zo šliapania. FSS tiež zabezpečuje plynulétlmenie v zjazdoch a tiež počas brzdenia či s plne zabrzdeným kolesom, kedy zostáva tlmič stáleaktívny aj pri jazde v náročnom teréne.' },
-    { id: 5, src: "/technology/img1.png", alt: "tech_5", title: 'TAPERED HEAD TUBING', descr: 'Tapered hlavová trubka má kónický tvar, ktorý je charakteristický najmä tuhosťou a pevnosťou. V hornej časti je ložisko s rozmerom 1 1/8 palca a v spodnej časti 1,5 palca. Aj takýto malý detail robí bicykel pri jazde stabilnejším a presnejším.' },
-    { id: 6, src: "/technology/img2.png", alt: "tech_6", title: 'DROPPER SEATPOST', descr: 'Teleskopická sedlovka s možnosťou zasunutia do rámu. Ideálna v prípade členitého terénu. Pomocou diaľkového ovládania z riadidiel jazdec mení výšku sedla za jazdy bez nutnosti zosadať pred technickými pasážami.' },
-
-    { id: 7, src: "/technology/img1.png", alt: "tech_1", title: 'TAPERED HEAD TUBING', descr: 'Tapered hlavová trubka má kónický tvar, ktorý je charakteristický najmä tuhosťou a pevnosťou. V hornej časti je ložisko s rozmerom 1 1/8 palca a v spodnej časti 1,5 palca. Aj takýto malý detail robí bicykel pri jazde stabilnejším a presnejším.' },
-    { id: 8, src: "/technology/img2.png", alt: "tech_2", title: 'DROPPER SEATPOST', descr: 'Teleskopická sedlovka s možnosťou zasunutia do rámu. Ideálna v prípade členitého terénu. Pomocou diaľkového ovládania z riadidiel jazdec mení výšku sedla za jazdy bez nutnosti zosadať pred technickými pasážami.' },
-    { id: 9, src: "/technology/img3.png", alt: "tech_3", title: 'Syntace X12', descr: 'Syntace X12 je jednoduchý systém, ktorý šetrí hmotnosť a uľahčuje montáž, demontáž kolesa a dotiahnutie len z jednej strany. Medzi hlavné výhody systému X12 patrí vyššia tuhosť zadného kolesa a spoľahlivá poloha brzdového kotúča.' },
-    { id: 10, src: "/technology/img4.png", alt: "tech_4", title: 'FSS Floating', descr: 'FSS (Floating Shock Suspension) je systém pruženia, ktorý stláča plne plávajúci tlmičsimultánne z oboch strán. Tento systém tak zabraňuje zvýšenému naťahovaniu reťaze azároveň je aktívny pri brzdení, pričom účinnosť brzdenia zostáva zachovaná v plnom rozsahu.Systém FSS poskytuje plnú stabilitu a pohodlie v akýchkoľvek podmienkach a ani v prudkýchstúpaniach tak nestrácate vyvinutú silu a energiu zo šliapania. FSS tiež zabezpečuje plynulétlmenie v zjazdoch a tiež počas brzdenia či s plne zabrzdeným kolesom, kedy zostáva tlmič stáleaktívny aj pri jazde v náročnom teréne.' },
-    { id: 11, src: "/technology/img1.png", alt: "tech_5", title: 'TAPERED HEAD TUBING', descr: 'Tapered hlavová trubka má kónický tvar, ktorý je charakteristický najmä tuhosťou a pevnosťou. V hornej časti je ložisko s rozmerom 1 1/8 palca a v spodnej časti 1,5 palca. Aj takýto malý detail robí bicykel pri jazde stabilnejším a presnejším.' },
-    { id: 12, src: "/technology/img2.png", alt: "tech_6", title: 'DROPPER SEATPOST', descr: 'Teleskopická sedlovka s možnosťou zasunutia do rámu. Ideálna v prípade členitého terénu. Pomocou diaľkového ovládania z riadidiel jazdec mení výšku sedla za jazdy bez nutnosti zosadať pred technickými pasážami.' },
-];
 
 const Technologies = () => {
     const sliderRef = useRef(null);
     const [isStart, setIsStart] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
+
+    // GSAP
+    const container = useRef();
+    useGSAP(() => {
+        gsap.fromTo(container.current, 
+            { 
+                // НАЧАЛЬНОЕ СОСТОЯНИЕ
+                scale: 0.5, 
+                opacity: 0.8,
+            }, 
+            {
+                // КОНЕЧНОЕ СОСТОЯНИЕ
+                scale: 1, // нормальный размер ("приехал" к нам)
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: "top bottom", 
+                    end: "bottom bottom", // закончить, когда НИЗ контейнера коснется НИЗА экрана (или можно 'center center')
+                    scrub: 1, //плавностью в 1 секунду
+                }
+            }
+        );
+    }, { scope: container });
+
 
     const handleScroll = () => {
         const slider = sliderRef.current;
@@ -37,11 +51,12 @@ const Technologies = () => {
 
     return (
         <div className='w-full bg-[#F1F1F1] select-none'>
-            <div className='mx-auto max-w-[1440px] px-5 pt-5 pb-10'>
+            <div ref={container} className='mx-auto max-w-[1440px] px-5 pt-5 pb-10'>
                 
                 <div className='flex items-center justify-between mb-[27px]'>
                     {/* title section */}
-                    <h3 className='text-[#0C0D0D] text-[20px] font-medium'>TECHNOLÓGIE</h3>
+                    <Title title="TECHNOLÓGIE" />
+                    
                     {/* arrows */}
                     <div className='flex items-center'>
                         <button 

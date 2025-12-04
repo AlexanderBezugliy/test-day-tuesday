@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from 'react'
-
-
-const detailImages = [
-    { id: 1, src: "/detail-slider/img1.png", alt: "Detail 1" },
-    { id: 2, src: "/detail-slider/img2.png", alt: "Detail 2" },
-    { id: 3, src: "/detail-slider/img3.png", alt: "Detail 3" },
-
-    { id: 4, src: "/detail-slider/img1.png", alt: "Detail 4" },
-    { id: 5, src: "/detail-slider/img2.png", alt: "Detail 5" },
-    { id: 6, src: "/detail-slider/img3.png", alt: "Detail 6" },
-];
+import React, { useEffect, useRef, useState } from 'react'
+import { detailImages } from '../assets';
+import Title from './ui/Title';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Detaily = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +13,31 @@ const Detaily = () => {
     const [slidesVisible, setSlidesVisible] = useState(2.5);
     
     const maxIndex = Math.ceil(detailImages.length - slidesVisible);
+
+    // GSAP
+    const container = useRef();
+    useGSAP(() => {
+        gsap.fromTo(container.current, 
+            { 
+                // НАЧАЛЬНОЕ СОСТОЯНИЕ
+                scale: 0.5, 
+                opacity: 0.8,
+            }, 
+            {
+                // КОНЕЧНОЕ СОСТОЯНИЕ
+                scale: 1, // нормальный размер ("приехал" к нам)
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: "top bottom", 
+                    end: "bottom bottom", // закончить, когда НИЗ контейнера коснется НИЗА экрана (или можно 'center center')
+                    scrub: 1, //плавностью в 1 секунду
+                }
+            }
+        );
+    }, { scope: container });
+
     
     const nextSlide = () => {
         if (currentIndex < maxIndex) {
@@ -78,10 +96,12 @@ const Detaily = () => {
     }, []);
 
     return (
-        <div className='w-full overflow-hidden select-none'>
+        <div ref={container} className='w-full overflow-hidden select-none'>
             {/* nav */}
             <div className='mx-auto max-w-[1440px] px-5 pt-[60px] mb-4 flex items-center justify-between'>
-                <h3 className='text-[#0C0D0D] text-[20px] font-medium'>DETAILY</h3>
+                <div>
+                    <Title title="DETAILY" />
+                </div>
 
                 <div className='flex items-center'>
                     <div 
