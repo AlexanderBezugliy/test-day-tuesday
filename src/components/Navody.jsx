@@ -1,14 +1,9 @@
 import React from "react";
 import ManualDropdown from "./ui/ManualDropdown";
+import { manualsData } from "../assets";
 
 
 const Navody = () => {
-    const manualsData = [
-        { id: 1, title: "MANUÁL RS / PDF", items: ["select 1", "select 2", "select 3", "select 4", "select 5"], isDark: true, arrow: "/white-arrow-down.png" },
-        { id: 2, title: "MANUÁL FS / PDF", items: ["select 1", "select 2", "select 3", "select 4", "select 5"], isDark: false, arrow: "/black-arrow-down.png" },
-        { id: 3, title: "TECHNICKÝ VÝKRES / PDF", items: ["select 1", "select 2", "select 3", "select 4", "select 5"], isDark: false, arrow: "/black-arrow-down.png" }
-    ];
-
     return (
         <div className="w-full border-t border-[#D8D9DA] mb-[100px] ">
             <div className="mx-auto max-w-[1440px] px-5 mt-5 flex flex-col text-[#0C0D0D]">

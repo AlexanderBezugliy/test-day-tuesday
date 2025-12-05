@@ -35,7 +35,7 @@ const Motor = () => {
     }, { scope: container });
 
     return (
-        <div className='w-full pt-5 bg-[#0C0D0D] text-white'>
+        <div id='e-bicykle' className='w-full pt-5 bg-[#0C0D0D] text-white'>
             <div ref={container} className='mx-auto max-w-[1440px] px-5 gap-x-20  flex flex-col motor-md:flex-row'>
                 {/* left */}
                 <div ref={titleRef} className='flex-[30%]'>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 /* максимально похожий шрифт из "бесплатных" */
 
 @import "tailwindcss";
@@ -7,7 +7,9 @@
     font-family: "Jost", sans-serif;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 @theme {
     --breakpoint-nav-xl: 912px;

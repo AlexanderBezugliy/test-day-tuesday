@@ -1,44 +1,7 @@
 import React, { useRef, useState } from "react";
 import DoplinkyCard from "./ui/DoplinkyCard";
+import { doplinkys } from "../assets";
 
-const doplinkys = [
-    { 
-        id: 1, 
-        title: 'SADA OSVETLENIA CTM PINN', 
-        price: '3.99 EUR', 
-        img: '/doplinkys/img1.png' 
-    },
-    { 
-        id: 2, 
-        title: 'PRILBA CTM MOLAB', 
-        price: '54.99 EUR', 
-        img: '/doplinkys/img2.png' 
-    },
-    { 
-        id: 3, 
-        title: 'PRILBA CTM VENTE', 
-        price: '23.49 EUR', 
-        img: '/doplinkys/img3.png' 
-    },
-    { 
-        id: 4, 
-        title: 'SADA OSVETLENIA CTM PINN', 
-        price: '3.99 EUR', 
-        img: '/doplinkys/img1.png' 
-    },
-    { 
-        id: 5, 
-        title: 'PRILBA CTM MOLAB', 
-        price: '54.99 EUR', 
-        img: '/doplinkys/img2.png' 
-    },
-    { 
-        id: 6, 
-        title: 'PRILBA CTM VENTE', 
-        price: '23.49 EUR', 
-        img: '/doplinkys/img3.png' 
-    },
-];
 
 const Doplinky = () => {
     const sliderRef = useRef(null);
@@ -66,7 +29,7 @@ const Doplinky = () => {
     
         const cardWidth = firstCard.clientWidth; // получаем ширину карточки
     
-        const gap = 10; // учитываем отступ 
+        const gap = 1; // учитываем отступ 
     
         const scrollAmount = cardWidth + gap; // итоговая дистанция скролла
     
@@ -74,7 +37,7 @@ const Doplinky = () => {
     };
 
     return (
-        <div className="relative w-full">
+        <div id="doplnky" className="relative w-full">
             <div className="mx-auto max-w-[1440px] px-5 pb-5">
                 <div className="flex items-center justify-between">
                     {/* title section */}

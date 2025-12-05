@@ -1,46 +1,8 @@
 import React, { useRef, useState } from "react";
-import BikeColors from "./ui/BikeColors";
 import BikeCard from "./ui/BikeCard";
+import { bikes } from "../assets";
+import Title from "./ui/Title";
 
-const bikes = [
-    { 
-        id: 1, 
-        title: 'PULZE PRO (29")', 
-        price: '2 399.99 EUR', 
-        img: '/bicycle/bike1.png' 
-    },
-    { 
-        id: 2, 
-        title: 'PULZE XPERT (29")', 
-        price: '1 999.99 EUR', 
-        img: '/bicycle/bike2.png' 
-    },
-    { 
-        id: 3, 
-        title: 'PULZE XPERT (29")', 
-        price: '1 999.99 EUR', 
-        img: '/bicycle/bike3.png' 
-    },
-
-    { 
-        id: 4, 
-        title: 'PULZE PRO (29")', 
-        price: '2 399.99 EUR', 
-        img: '/bicycle/bike1.png' 
-    },
-    { 
-        id: 5, 
-        title: 'PULZE XPERT (29")', 
-        price: '1 999.99 EUR', 
-        img: '/bicycle/bike2.png' 
-    },
-    { 
-        id: 6, 
-        title: 'PULZE XPERT (29")', 
-        price: '1 999.99 EUR', 
-        img: '/bicycle/bike3.png' 
-    },
-];
 
 const Bicycle = () => {
     const sliderRef = useRef(null);
@@ -68,8 +30,7 @@ const Bicycle = () => {
     
         const cardWidth = firstCard.clientWidth; // получаем ширину карточки
     
-        const gap = 10; // учитываем отступ 
-    
+        const gap = 1; // учитываем отступ 
         const scrollAmount = cardWidth + gap; // итоговая дистанция скролла
     
         slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' }); // скроллим: направление (-1 или 1) умножаем на дистанцию
@@ -77,12 +38,12 @@ const Bicycle = () => {
     
 
     return (
-        <div className="relative w-full">
+        <div id="bicykle" className="relative w-full">
             <div className="mx-auto max-w-[1440px] px-5 pt-5 pb-10">
 
-                <div className="flex items-center justify-between mb-[27px]">
+                <div className="flex items-center justify-between">
                     {/* title section */}
-                    <h3 className='text-[#0C0D0D] text-[20px] font-medium'>TECHNOLÓGIE</h3>
+                    <Title title="BICYKLE"/>
                     {/* arrows */}
                     <div className='flex items-center'>
                         <button 

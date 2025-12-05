@@ -1,9 +1,9 @@
 
 // navbar
 export const links = [
-    { name: "E-bicykle", href: "e-bicykle", active: true }, 
-    { name: "Bicykle", href: "bicykle", active: false },
-    { name: "Doplnky", href: "doplnky", active: false },
+    { name: "E-bicykle", href: "#e-bicykle", active: true }, 
+    { name: "Bicykle", href: "#bicykle", active: false },
+    { name: "Doplnky", href: "#doplnky", active: false },
 ];
 
 // hero
@@ -91,3 +91,92 @@ export const technologyImages = [
     { id: 11, src: "/technology/img1.png", alt: "tech_5", title: 'TAPERED HEAD TUBING', descr: 'Tapered hlavová trubka má kónický tvar, ktorý je charakteristický najmä tuhosťou a pevnosťou. V hornej časti je ložisko s rozmerom 1 1/8 palca a v spodnej časti 1,5 palca. Aj takýto malý detail robí bicykel pri jazde stabilnejším a presnejším.' },
     { id: 12, src: "/technology/img2.png", alt: "tech_6", title: 'DROPPER SEATPOST', descr: 'Teleskopická sedlovka s možnosťou zasunutia do rámu. Ideálna v prípade členitého terénu. Pomocou diaľkového ovládania z riadidiel jazdec mení výšku sedla za jazdy bez nutnosti zosadať pred technickými pasážami.' },
 ];
+
+// manuals data
+export const manualsData = [
+    { id: 1, title: "MANUÁL RS / PDF", items: ["select 1", "select 2", "select 3", "select 4", "select 5"], isDark: true, arrow: "/white-arrow-down.png" },
+    { id: 2, title: "MANUÁL FS / PDF", items: ["select 1", "select 2", "select 3", "select 4", "select 5"], isDark: false, arrow: "/black-arrow-down.png" },
+    { id: 3, title: "TECHNICKÝ VÝKRES / PDF", items: ["select 1", "select 2", "select 3", "select 4", "select 5"], isDark: false, arrow: "/black-arrow-down.png" }
+];
+
+// bikes 
+export const bikes = [
+    { 
+        id: 1, 
+        title: 'PULZE PRO (29")', 
+        price: '2 399.99 EUR', 
+        img: '/bicycle/bike1.png' 
+    },
+    { 
+        id: 2, 
+        title: 'PULZE XPERT (29")', 
+        price: '1 999.99 EUR', 
+        img: '/bicycle/bike2.png' 
+    },
+    { 
+        id: 3, 
+        title: 'PULZE XPERT (29")', 
+        price: '1 999.99 EUR', 
+        img: '/bicycle/bike3.png' 
+    },
+
+    { 
+        id: 4, 
+        title: 'PULZE PRO (29")', 
+        price: '2 399.99 EUR', 
+        img: '/bicycle/bike1.png' 
+    },
+    { 
+        id: 5, 
+        title: 'PULZE XPERT (29")', 
+        price: '1 999.99 EUR', 
+        img: '/bicycle/bike2.png' 
+    },
+    { 
+        id: 6, 
+        title: 'PULZE XPERT (29")', 
+        price: '1 999.99 EUR', 
+        img: '/bicycle/bike3.png' 
+    },
+];
+
+// doplinkys
+export const doplinkys = [
+    { 
+        id: 1, 
+        title: 'SADA OSVETLENIA CTM PINN', 
+        price: '3.99 EUR', 
+        img: '/doplinkys/img1.png' 
+    },
+    { 
+        id: 2, 
+        title: 'PRILBA CTM MOLAB', 
+        price: '54.99 EUR', 
+        img: '/doplinkys/img2.png' 
+    },
+    { 
+        id: 3, 
+        title: 'PRILBA CTM VENTE', 
+        price: '23.49 EUR', 
+        img: '/doplinkys/img3.png' 
+    },
+    { 
+        id: 4, 
+        title: 'SADA OSVETLENIA CTM PINN', 
+        price: '3.99 EUR', 
+        img: '/doplinkys/img1.png' 
+    },
+    { 
+        id: 5, 
+        title: 'PRILBA CTM MOLAB', 
+        price: '54.99 EUR', 
+        img: '/doplinkys/img2.png' 
+    },
+    { 
+        id: 6, 
+        title: 'PRILBA CTM VENTE', 
+        price: '23.49 EUR', 
+        img: '/doplinkys/img3.png' 
+    },
+];
+

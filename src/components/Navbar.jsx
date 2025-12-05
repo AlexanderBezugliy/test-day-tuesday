@@ -26,22 +26,17 @@ const Navbar = () => {
             <div ref={navContainer} className='mx-auto max-w-[1440px] px-5  flex justify-between items-center nav-md:flex-col nav-xl:flex-row gap-y-5 nav-xl:gap-y-0'>
                 {/* LEFT SIDE */}
                 <div className='flex items-center'>
-                    <img src="/logo.png" alt="logo" className='my-[19px] mr-[33px]' />
+                    {/* logo */}
+                    <img src="/logo.png" alt="logo" className='my-[19px] mr-[33px] cursor-pointer' />
 
                     <ul className='hidden nav-md:flex items-center uppercase'>
                         {links.map((link) => (
                             <li key={link.name}>
                                 <a 
-                                    onClick={(e) => {
-                                        e.preventDefault(); 
-                                        setIsActive(link.name); 
-                                    }}
+                                    onClick={() => setIsActive(link.name)}
                                     href={link.href}
                                     className={`block px-5 py-5 transition-colors duration-300
-                                            ${isActive === link.name
-                                                ? "bg-[#E5E5E5] text-black" 
-                                                : "bg-transparent hover:bg-gray-100"
-                                        }
+                                        ${isActive === link.name ? "bg-[#E5E5E5] text-black" : "bg-transparent hover:bg-gray-100"}
                                     `}
                                 >
                                     {link.name}
@@ -85,14 +80,13 @@ const Navbar = () => {
                         {links.map((link) => (
                             <li key={link.name} className="w-full">
                                 <a 
-                                    onClick={(e) => { 
-                                        e.preventDefault(); 
+                                    onClick={() => { 
                                         setIsActive(link.name);
                                         setIsMenuOpen(!isMenuOpen);
                                     }}
                                     href={link.href}
                                     className={`block w-full py-4 text-lg font-medium transition-colors duration-300
-                                            ${isActive === link.name ? "text-black font-bold underline" : "text-gray-500" }`}
+                                        ${isActive === link.name ? "text-black font-bold underline" : "text-gray-500" }`}
                                 >
                                     {link.name}
                                 </a>

@@ -8,6 +8,7 @@ import gsap from 'gsap';
 
 const Hero = () => {
     const [isActive, setIsActive] = useState('SWITCH PRO');
+    const [isActiveSize, setIsActiveSize] = useState("29");
 
     const navRef = useRef();
     const leftSideRef = useRef();
@@ -33,6 +34,13 @@ const Hero = () => {
         }, '-=1')
     }, []);
 
+    const getButtonClass = (size) => {
+        const baseClass = "w-[100px] h-10 py-1.5 border";
+        const activeClass = "border-black";
+        const inactiveClass = "border-[#7D8082] text-[#7D8082] hover:border-gray-400";
+
+        return `${baseClass} ${isActiveSize === size ? activeClass : inactiveClass}`;
+    };
 
     return (
         <div className='bg-[#F1F1F1] overflow-hidden'>
@@ -50,7 +58,7 @@ const Hero = () => {
                                     }}
                                     href={item.href}
                                     className={`transition-colors duration-200 hover:text-black 
-                                            ${isActive === item.name ? "text-black" : "" }`}
+                                        ${isActive === item.name ? "text-black" : "" }`}
                                 >
                                     {item.name}
                                 </a>
@@ -73,8 +81,8 @@ const Hero = () => {
                             </div>
 
                             <div className='font-medium mb-5 hero-xl:mb-0'>
-                                <button className='w-[100px] h-10 border cursor-pointer'>29"</button>
-                                <button className='w-[100px] h-10 border border-gray-300 text-gray-400 cursor-pointer'>27.5"</button>
+                                <button onClick={() => setIsActiveSize('29')} className={getButtonClass('29')}>29"</button>
+                                <button onClick={() => setIsActiveSize('27.5')} className={getButtonClass('27.5')}>27.5"</button>
                             </div>
                         </div>
 
